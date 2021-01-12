@@ -3,7 +3,7 @@ let favoriteSandwich = "Rueben";
 let leastFavoriteSandwich = {
   sandwichName: "Mud sandwich",
   price: 11.99,
-  ingredients: ["bread", "mud", "mustard"],
+  ingredients: ["bread", "cheese", "mustard"],
 };
 
 // console.log(leastFavoriteSandwich.ingredients[0]);
@@ -23,6 +23,7 @@ let menu = [
       "corned beef",
       "saurkraut",
       "thousand island dressing",
+      
     ],
   },
 ];
@@ -110,9 +111,43 @@ let menu = [
 //   }
 //         fullSandwichInfo('chicken parmesean', 10.99, ['chicken', 'parmesean cheese', 'garlic bread'])
 
-//Write a function that reduces every sandwich's price by 25% and returns a new array of discount sandwiches.
-// loop through all the sandwiches and print each price to the console
-// 
-function discountedPrice(){
+// //Write a function that reduces every sandwich's price by 25% and returns a new array of discount sandwiches.
+
+// // loop through all the sandwiches and print each price to the console
+// // 
+// function discountedPrice(){
     
+//     let discountedSandwich = []
+//     for(let i = 0; i < menu.length; i++){
+//         let newSandwichPrice = (menu[i].price - menu[i].price * 0.25).toFixed(2)
+//         discountedSandwich.push(newSandwichPrice)
+//         console.log(menu[i].sandwichName)
+//         console.log(newSandwichPrice)
+//       }
+      
+// }
+
+// discountedPrice()
+
+//Write a "Dairy Free" function that loops through your array of sandwiches and returns a new array of sandwiches that do NOT include cheese in their ingredient list. (Make sure you have at least one sandwich with cheese so you can test if this function works.)
+
+function dairyFree(){
+    //declare new array of cheese-free sandwiches
+    let dairyFreeArray = []
+    for (let i = 0; i < menu.length; i++){
+        
+        if(menu[i].ingredients.includes("cheese") === false){
+            dairyFreeArray.push(menu[i].sandwichName)
+        }
+    }
+    //return a new array of cheese-free sandwiches
+    return(dairyFreeArray)
 }
+
+
+console.log(dairyFree())
+
+ //how do we check to see if the array of ingredients includes cheese
+        //.includes()
+        //if it does not include we want to push to the array of cheese free sandwiches
+        //if it does include cheese, do nothing
